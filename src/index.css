@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;755;800&family=Playfair+Display:ital,wght@0,600;1,500&family=Space+Grotesk:wght@300;450;550;700&family=JetBrains+Mono:wght@300;400;600&family=Caveat:wght@600;700&family=Comfortaa:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-script: "Caveat", cursive;
+  --font-rounded: "Comfortaa", sans-serif;
+}
+
+/* Custom scrollbars */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(12, 14, 23, 0.5);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(253, 59, 106, 0.3); /* Elegant magenta/pink */
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(253, 59, 106, 0.65);
+}
+
+/* Radio Ava deep slate luxury background canvas */
+.radio-ava-bg {
+  background-color: #0c0e17;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(253, 59, 106, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(254, 104, 70, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.04) 0%, transparent 60%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Curvilinear sweeping stripes simulating the screenshot's graphic patterns */
+.radio-ava-wave-lines::before,
+.radio-ava-wave-lines::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.015);
+  box-sizing: border-box;
+  z-index: 0;
+}
+
+.radio-ava-wave-lines::before {
+  width: 120vw;
+  height: 120vw;
+  top: -40vw;
+  left: -20vw;
+  border-width: 40px;
+  border-color: rgba(253, 59, 106, 0.01) transparent transparent rgba(253, 59, 106, 0.01);
+  transform: rotate(-15deg);
+}
+
+.radio-ava-wave-lines::after {
+  width: 150vw;
+  height: 150vw;
+  bottom: -60vw;
+  right: -30vw;
+  border-width: 60px;
+  border-color: transparent rgba(254, 104, 70, 0.008) rgba(254, 104, 70, 0.008) transparent;
+  transform: rotate(35deg);
+}
+
+/* Luxury audio carbon/woven background pattern */
+.hifi-carbon-pattern {
+  background-color: #0c0e17;
+  background-image: 
+    radial-gradient(ellipse at center, rgba(18, 20, 32, 0.8) 0%, rgba(12, 14, 23, 0.98) 80%),
+    linear-gradient(45deg, #131622 25%, transparent 25%), 
+    linear-gradient(-45deg, #131622 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, #131622 75%), 
+    linear-gradient(-45deg, transparent 75%, #131622 75%);
+  background-size: 100% 100%, 10px 10px;
+  background-position: center, 0 0, 0 5px, 5px -5px, -5px 0px;
+}
+
+/* Metallic brushed texture */
+.hifi-brushed-metal {
+  background: linear-gradient(135deg, #191c28 0%, #0e1019 100%);
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.05), 
+    0 10px 40px rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Premium Glassmorphic cards with pink glow traces */
+.hifi-glass-card {
+  background: rgba(19, 22, 34, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 12px 36px 0 rgba(0, 0, 0, 0.5);
+}
+
+.radio-card-glow {
+  border: 1px solid rgba(253, 59, 106, 0.15);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.45),
+    inset 0 1px 1px rgba(255, 255, 255, 0.06);
+}
+
+.radio-card-glow:hover {
+  border: 1px solid rgba(253, 59, 106, 0.3);
+  box-shadow: 
+    0 12px 36px 0 rgba(253, 59, 106, 0.08),
+    0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+/* Liquid gold, magenta, and neon glows */
+.hifi-gold-glow {
+  box-shadow: 0 0 35px rgba(253, 59, 106, 0.25);
+  border-color: rgba(253, 59, 106, 0.4);
+}
+
+.hifi-amber-glow {
+  box-shadow: 0 0 40px rgba(253, 59, 106, 0.35);
+}
+
+.hifi-green-glow {
+  box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+}
+
+/* Animations declarations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Flickering vacuum tube heat glow matching pink/salmon */
+@keyframes tubeHeat {
+  0%, 100% {
+    opacity: 0.7;
+    filter: drop-shadow(0 0 10px rgba(253, 59, 106, 0.5)) saturate(1.1);
+  }
+  50% {
+    opacity: 0.95;
+    filter: drop-shadow(0 0 20px rgba(253, 59, 106, 0.9)) saturate(1.4);
+  }
+}
+
+.animate-tubeHeat {
+  animation: tubeHeat 3.5s ease-in-out infinite;
+}
+
+/* Dial rotation styling */
+.hifi-knob {
+  background: radial-gradient(circle, #222534 0%, #12141c 75%, #0c0e17 100%);
+  border: 1.5px solid rgba(255,255,255,0.06);
+  box-shadow: 
+    0 4px 15px rgba(0,0,0,0.65), 
+    inset 0 1px 1px rgba(255,255,255,0.1);
+}
+
+/* Accent selection styling override */
+::selection {
+  background-color: rgba(253, 59, 106, 0.25);
+  color: #fd3b6a;
+}
+
+/* Custom range style for audio deck */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #181920;
+  border-radius: 9999px;
+  height: 4px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 14px;
+  width: 14px;
+  border-radius: 50%;
+  background: #fd3b6a; /* Pink Accent button */
+  box-shadow: 0 0 8px rgba(253, 59, 106, 0.6), 0 1px 3px rgba(0, 0, 0, 0.8);
+  border: 1px solid #ffffff30;
+  transition: transform 0.12s ease, background-color 0.12s;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.3);
+  background: #fe6846;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Modern Music Streamer",
+  "description": "A Spotify-like music streaming application with personalized AI recommendations, custom playlists, and live search for modern tracks including Macan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
