@@ -61,15 +61,17 @@ export default function PlayerBar({
 
   const [useAudioEngine, setUseAudioEngine] = useState<boolean>(() => {
     if (typeof window !== "undefined") {
-      return localStorage.getItem("forceBackgroundPlay") === "true";
+      const saved = localStorage.getItem("forceBackgroundPlay");
+      return saved === null ? true : saved === "true";
     }
-    return false;
+    return true;
   });
   const [forceBackgroundPlayback, setForceBackgroundPlayback] = useState<boolean>(() => {
     if (typeof window !== "undefined") {
-      return localStorage.getItem("forceBackgroundPlay") === "true";
+      const saved = localStorage.getItem("forceBackgroundPlay");
+      return saved === null ? true : saved === "true";
     }
-    return false;
+    return true;
   });
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
